@@ -75,6 +75,11 @@
       $(selector).append(`${msg}`);
 
       return this;
+    },
+
+    clearHTML : function(selector){
+      $(selector).remove();
+      return this;
     }
 
   }

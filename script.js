@@ -22,8 +22,12 @@ console.log(person1.setLang('en').greet());
 // get user input first and lastname
 var input = document.querySelector('input');
 var selectLang = document.querySelector('select');
+var greetingText = document.querySelector('.greeting__text');
 
 $('button').bind('click', function(){
+  // remove previous html
+  greetingText.innerHTML = '';
+
   // get user input
   var inputValue = input.value;
 
@@ -42,7 +46,6 @@ $('button').bind('click', function(){
 
   // empty values
   input.value = '';
-
 })
 
 

@@ -62,12 +62,19 @@
       return this;
     },
 
-    updateHTML : function(selector){
+    updateHTML : function(selector, formal){
       if(!$){
         throw "jQuery not working";
       }
-      var msg = this.greet();
+      if(formal){
+        var msg = this.greet(true);
+      } else {
+        var msg = this.greet();
+      }
+
       $(selector).append(`${msg}`);
+
+      return this;
     }
 
   }

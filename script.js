@@ -16,6 +16,7 @@ console.log(person1.greet(formal));
 console.log(person1.greet());
 
 console.log(person1.setLang('en').greet());
+person1.updateHTML('.greeting__text');
 
 
 

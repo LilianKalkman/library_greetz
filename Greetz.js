@@ -60,6 +60,14 @@
       this.language = lang;
       this.validateLanguage();
       return this;
+    },
+
+    updateHTML : function(selector){
+      if(!$){
+        throw "jQuery not working";
+      }
+      var msg = this.greet();
+      $(selector).append(`${msg}`);
     }
 
   }

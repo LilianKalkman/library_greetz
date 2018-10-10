@@ -4,6 +4,20 @@
     return new Greet(firstname, lastname, language);
   }
 
+  var supportedLanguages = ['nl', 'en', 'es'];
+
+  var greetings = {
+    nl : 'hoooi',
+    en : 'helloooo',
+    es : 'holaaaa'
+  }
+
+  var formalGreetings = {
+    nl : 'Goedemiddag',
+    en : 'Good afternoon',
+    es : 'Hola'
+  }
+
   function Greet(fn = 'lilian',ln = 'kalkman',lg = 'nl') {
     var self = this;
     self.firstname = fn;
@@ -12,6 +26,25 @@
   }
 
   Greet.prototype = {
+
+    getFullName : function(){
+      var fullname = this.firstname + ' ' + this.lastname;
+      return this.fullname = fullname;
+    },
+
+    validateLanguage : function(){
+      if(supportedLanguages.indexOf(this.language) === -1 ){
+        throw "Invalid Language";
+      };
+    },
+
+    getGreeting : function() {
+      return greetings[this.language] + ' ' + this.firstname;
+    },
+
+    getGreetingFormal : function(name){
+      return formalGreetings[this.language] + ' ' + this.fullname;
+    },
 
   }
 

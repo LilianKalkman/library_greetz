@@ -46,6 +46,22 @@
       return formalGreetings[this.language] + ' ' + this.fullname;
     },
 
+    greet : function(formal){
+      var message;
+      if(formal){
+        message = this.getGreetingFormal();
+      } else {
+        message = this.getGreeting();
+      }
+      return message;
+    },
+
+    setLang : function(lang){
+      this.language = lang;
+      this.validateLanguage();
+      return this;
+    }
+
   }
 
   global.Greet = global.$G = greetz;
